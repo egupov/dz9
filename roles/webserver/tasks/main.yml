@@ -5,5 +5,11 @@
     name: tomcat9
     state: present
 
+- name: copy artefact
+  synchronize:
+    src: "/tmp/deploy/target/hello-1.0.war"
+    dest: "{{ dest_folder }}"
+  delegate_to: 51.250.34.162
+
   notify:
     - restart tomcat9

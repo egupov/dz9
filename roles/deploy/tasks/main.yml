@@ -11,11 +11,8 @@
 - name: Just get information about the repository whether or not it has already been cloned locally
   git:
     repo: 'https://github.com/boxfuse/boxfuse-sample-java-war-hello.git'
-    dest: /tmp/deploy
+    dest: "{{ deploy_folder }}"
     clone: yes
     update: no
 - name: Build app
-  shell: mvn package chdir="/tmp/deploy"
-
-  notify: 
-    - copy artefact
+  shell: mvn package chdir="{{ deploy_folder }}"
