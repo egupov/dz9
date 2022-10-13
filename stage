@@ -1,4 +1,9 @@
 [web]
-
+51.250.35.188
 
 [deploy]
+51.250.34.162
+
+[all:vars]
+ansible_connection=ssh
+ansible_user=egupov

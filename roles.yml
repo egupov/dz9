@@ -1,1 +1,14 @@
+---
+- name: deploy app
+  hosts: deploy
+  become: true
 
+  roles:
+    - deploy
+
+- name: ensure web app is present
+  hosts: web
+  become: true
+
+  roles:
+    - webserver
