@@ -1,0 +1,9 @@
+---
+# tasks file for webserver
+- name: install tomcat9
+  apt:
+    name: tomcat9
+    state: present
+
+  notify:
+    - restart tomcat9
